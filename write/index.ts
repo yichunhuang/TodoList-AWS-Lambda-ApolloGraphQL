@@ -22,10 +22,11 @@ interface Resol {
 }
 
 exports.handler = async (event) => {
+    const randomId: string = uuidv4();
     const params: Param = {
         Item: {
             "id": {
-                S: uuidv4()
+                S: randomId
             },
             "title": {
                 S: event.body.title
@@ -44,7 +45,7 @@ exports.handler = async (event) => {
             };
             const response = {
                 statusCode: 200,
-                body: "success"
+                body: randomId
             }
             resolve(response);
         });

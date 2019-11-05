@@ -2,10 +2,11 @@ const AWS = require('aws-sdk');
 const dynamodb = new AWS.DynamoDB();
 const uuidv4 = require('uuid/v4');
 exports.handler = async (event) => {
+    const randomId = uuidv4();
     const params = {
         Item: {
             "id": {
-                S: uuidv4()
+                S: randomId
             },
             "title": {
                 S: event.body.title
@@ -25,7 +26,7 @@ exports.handler = async (event) => {
             ;
             const response = {
                 statusCode: 200,
-                body: "success"
+                body: randomId
             };
             resolve(response);
         });

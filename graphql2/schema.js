@@ -4,7 +4,7 @@ const typeDefs = gql`
     # Your schema will go here
     type Mutation {
         newTodo(title: String!, description: String!): MutationResult
-        updateTodo(id: ID!, title: String!, description: String!): MutationResult
+        updateTodo(id: ID!, title: String!, description: String!, isCompleted: Boolean!): MutationResult
         deleteTodo(id: ID!): MutationResult
     }
     type Query {
@@ -15,6 +15,7 @@ const typeDefs = gql`
         id: ID!
         title: String
         description: String
+        isCompleted: Boolean
     }
     type MutationResult {
         statusCode: Int

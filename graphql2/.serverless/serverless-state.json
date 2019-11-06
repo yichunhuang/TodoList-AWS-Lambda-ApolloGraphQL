@@ -155,7 +155,7 @@
                 "S3Bucket": {
                   "Ref": "ServerlessDeploymentBucket"
                 },
-                "S3Key": "serverless/apollo-lambda/dev/1572932482004-2019-11-05T05:41:22.004Z/apollo-lambda.zip"
+                "S3Key": "serverless/apollo-lambda/dev/1573022335386-2019-11-06T06:38:55.386Z/apollo-lambda.zip"
               },
               "FunctionName": "apollo-lambda-dev-graphql",
               "Handler": "graphql.graphqlHandler",
@@ -174,14 +174,14 @@
               "IamRoleLambdaExecution"
             ]
           },
-          "GraphqlLambdaVersion3GnRJLe2VulHy61pKulIy8n6WiBXNDOhujODpoUIX5I": {
+          "GraphqlLambdaVersionxkt9ZQinZAjZklT8peeGh6jXUZLNePkq9X5ytpIWz0c": {
             "Type": "AWS::Lambda::Version",
             "DeletionPolicy": "Retain",
             "Properties": {
               "FunctionName": {
                 "Ref": "GraphqlLambdaFunction"
               },
-              "CodeSha256": "K3v9qi+9mIBuz6LPpfNQQfOJwJh9Pyok6C61QWYc0A4="
+              "CodeSha256": "krdrj+G2fcqCF39rpu1Itjwo/V6DIjWivTc4GeaZIuY="
             }
           },
           "ApiGatewayRestApi": {
@@ -343,7 +343,7 @@
               "MethodResponses": []
             }
           },
-          "ApiGatewayDeployment1572932469910": {
+          "ApiGatewayDeployment1573022308010": {
             "Type": "AWS::ApiGateway::Deployment",
             "Properties": {
               "RestApiId": {
@@ -404,7 +404,7 @@
           "GraphqlLambdaFunctionQualifiedArn": {
             "Description": "Current Lambda function version",
             "Value": {
-              "Ref": "GraphqlLambdaVersion3GnRJLe2VulHy61pKulIy8n6WiBXNDOhujODpoUIX5I"
+              "Ref": "GraphqlLambdaVersionxkt9ZQinZAjZklT8peeGh6jXUZLNePkq9X5ytpIWz0c"
             }
           },
           "ServiceEndpoint": {
@@ -568,7 +568,7 @@
     "artifact": "/Users/yichun_huang/Desktop/AWS/petpet/graphql2/.serverless/apollo-lambda.zip"
   },
   "package": {
-    "artifactDirectoryName": "serverless/apollo-lambda/dev/1572932482004-2019-11-05T05:41:22.004Z",
+    "artifactDirectoryName": "serverless/apollo-lambda/dev/1573022335386-2019-11-06T06:38:55.386Z",
     "artifact": "apollo-lambda.zip"
   }
 }

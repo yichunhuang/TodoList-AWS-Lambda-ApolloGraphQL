@@ -11,14 +11,17 @@ interface Param {
 
 interface Resol {
     "Item": {
-        "description": {
-            S: string
-        },
         "id": {
             S: string
         },
         "title": {
             S: string
+        },
+        "description": {
+            S: string
+        },
+        "isCompleted": {
+            BOOL: boolean
         }
     }
 }

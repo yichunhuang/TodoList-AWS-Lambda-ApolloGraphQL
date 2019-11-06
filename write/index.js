@@ -13,6 +13,9 @@ exports.handler = async (event) => {
             },
             "description": {
                 S: event.body.description
+            },
+            "isCompleted": {
+                BOOL: false
             }
         },
         TableName: 'Todo'

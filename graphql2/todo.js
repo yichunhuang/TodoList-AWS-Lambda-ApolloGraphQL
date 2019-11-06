@@ -30,7 +30,8 @@ class TodoAPI extends RESTDataSource {
             'todos/' + todo.id,
             {
                 title: todo.title,
-                description: todo.description
+                description: todo.description,
+                isCompleted: todo.isCompleted
             }
         );
         return response;
@@ -45,7 +46,8 @@ class TodoAPI extends RESTDataSource {
         return {
             id: todo.id.S,
             title: todo.title.S,
-            description: todo.description.S
+            description: todo.description.S,
+            isCompleted: todo.isCompleted.BOOL
         };
     }
 }

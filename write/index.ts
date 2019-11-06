@@ -9,8 +9,11 @@ interface Param {
         "title": {
             S: string
         },
-        description: {
+        "description": {
             S: string
+        },
+        "isCompleted": {
+            BOOL: boolean
         }
     },
     TableName: string
@@ -33,6 +36,9 @@ exports.handler = async (event) => {
             },
             "description": {
                 S: event.body.description
+            },
+            "isCompleted": {
+                BOOL: false
             }
         },
         TableName: 'Todo'

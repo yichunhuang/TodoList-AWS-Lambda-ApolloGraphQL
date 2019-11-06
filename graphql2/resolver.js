@@ -8,8 +8,8 @@ module.exports = {
     Mutation: {
         newTodo: (_, { title, description }, { dataSources }) => 
             dataSources.todoAPI.newTodo({ title, description }),
-        updateTodo: (_, { id, title, description }, { dataSources }) => 
-            dataSources.todoAPI.updateTodo({ id, title, description }),
+        updateTodo: (_, { id, title, description, isCompleted }, { dataSources }) => 
+            dataSources.todoAPI.updateTodo({ id, title, description, isCompleted }),
         deleteTodo: (_, { id }, { dataSources }) => 
             dataSources.todoAPI.deleteTodo({ todoId: id }), 
     }

@@ -7,12 +7,17 @@ test('get all todos', async () => {
     const allTodos = await todoAPI.getAllTodos();
     expect(Array.isArray(allTodos)).toBe(true);
     allTodos.forEach(todo => {
-        expect(Object.keys(todo).sort()).toEqual(['id', 'title', 'description'].sort());
+        expect(Object.keys(todo).sort()).toEqual(['id', 'title', 'description', 'isCompleted'].sort());
     })
     allTodos.forEach(todo => {
-        Object.values(todo).forEach(value => {
-            expect(typeof value).toEqual('string');
-        })
+        Object.keys(todo).forEach(key => {
+            if (key === 'isCompleted') {
+                expect(typeof todo[key]).toEqual('boolean'); 
+            }
+            else {
+                expect(typeof todo[key]).toEqual('string');
+            }
+        });
     })
 });
 
@@ -23,10 +28,15 @@ test('get one todo by id', async () => {
     expect(typeof todo === 'object' && todo !== null).toBe(true);
 
     if (Object.keys(todo).length == 0) return;
-    expect(Object.keys(todo).sort()).toEqual(['id', 'title', 'description'].sort());
-    Object.values(todo).forEach(value => {
-        expect(typeof value).toEqual('string');
-    })
+    expect(Object.keys(todo).sort()).toEqual(['id', 'title', 'description', 'isCompleted'].sort());
+    Object.keys(todo).forEach(key => {
+        if (key === 'isCompleted') {
+            expect(typeof todo[key]).toEqual('boolean'); 
+        }
+        else {
+            expect(typeof todo[key]).toEqual('string');
+        }
+    });
 });
 
 test('create, update, then delete a todo', async () => {
@@ -44,7 +54,8 @@ test('create, update, then delete a todo', async () => {
     const updateTodo = {
         id: newResponse.body,
         title: 'testUpdateTitle',
-        description: 'testUpdateDescription'
+        description: 'testUpdateDescription',
+        isCompleted: true
     };
     const updateResponse = await todoAPI.updateTodo(updateTodo);
     expect(Object.keys(updateResponse).sort()).toEqual(['statusCode', 'body'].sort());

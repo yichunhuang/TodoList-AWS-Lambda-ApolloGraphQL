@@ -8,13 +8,16 @@ exports.handler = async (event) => {
                 S: event.id
             }
         },
-        UpdateExpression: "set title = :x, description = :y",
+        UpdateExpression: "set title = :x, description = :y, isCompleted = :z",
         ExpressionAttributeValues: {
             ":x": {
                 S: event.body.title
             },
             ":y": {
                 S: event.body.description
+            },
+            ":z": {
+                BOOL: event.body.isCompleted
             }
         }
     };

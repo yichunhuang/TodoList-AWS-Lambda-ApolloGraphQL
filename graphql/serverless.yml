@@ -1,5 +1,3 @@
-org: b03704074
-app: apollo-lambda-app
 service: apollo-lambda
 provider:
   name: aws
@@ -16,8 +14,4 @@ functions:
     - http:
         path: graphql
         method: get
-        cors: true
-    - http:
-        path: playground
-        method: any
         cors: true

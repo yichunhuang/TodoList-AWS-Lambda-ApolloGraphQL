@@ -106,20 +106,20 @@ https://9pfinhxi47.execute-api.us-east-2.amazonaws.com/prod/todos
 
 b.	GET /todos/:id 取得單一代辦
 * **Request Example**: 
-https://9pfinhxi47.execute-api.us-east-2.amazonaws.com/prod/todos/63747da6-5f6e-44aa-bb86-6653ad304fc7
+https://9pfinhxi47.execute-api.us-east-2.amazonaws.com/prod/todos/6d08f07d-4dd8-4fbb-81af-6c3bf9da3721
 
 * **Response Example**:
 ``` json
 {
     "Item": {
         "description": {
-            "S": "Email to professor about presentation"
+            "S": "buy cosmetics"
         },
         "id": {
-            "S": "5f84f5b7-5b82-4a2b-87b9-07357c93be51"
+            "S": "6d08f07d-4dd8-4fbb-81af-6c3bf9da3721"
         },
         "title": {
-            "S": "Meeting"
+            "S": "Travel to Japan"
         },
         "isCompleted": {
             "BOOL": false
